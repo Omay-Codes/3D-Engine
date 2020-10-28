@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Uho</title>
+        <meta charset="utf-8" />
+        <style>
+            textarea{
+                width: 50%;
+                height: 20em;
+                resize: none;
+                background: #00aaff;
+                color: #fff;
+                border: #000;
+            }
+            #about, #docs, #editor{
+                display: none;
+            }
+            #toAbout, #toDocs, #toEditor, .toLander{
+                background: #fff;
+                color: #aaa;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="lander">
+            <h1 align="center">Uho</h1>
+            <h2 align="center">The HTML 3D WebGL Engine</h2>
+            <p align="center">
+            <button id="toAbout" onClick="showAbout()">About</button><br />
+            <button id="toDocs" onClick="showDocs()">Docs</button><br />
+            <button id="toEditor" onClick="showEditor()">Editor</button>
+            </p>
+        </div>
+        <div id="about">
+            <button class="toLander" onClick="showLander()">Back</button><br />
+            <h1>About</h1>
+            <p>I've always wanted an easy 3D editor, but never found one... So I thought: <em>Why not make my own? It wouldn't be too hard, <b>right?</b></em> I was very wrong... It's hard.<br />Anyway, happy coding<br /><b><em>-Omay Operations</em></b></p>
+        </div>
+        <div id="docs">
+            <button class="toLander" onClick="showLander()">Back</button><br />
+        </div>
+        <div id="editor">
+            <button class="toLander" onClick="showLander()">Back</button><br />
+            <textarea></textarea>
+        </div>
+        <script>
+            var lander = document.getElementById("lander");
+            var about = document.getElementById("about");
+            var docs = document.getElementById("docs");
+            var editor = document.getElementById("editor");
+            function hideAll(){
+                lander.style.display = about.style.display = docs.style.display = editor.style.display = "none";
+            }
+            function showLander(){
+                hideAll();
+                lander.style.display = "block";
+            }
+            function showAbout(){
+                hideAll();
+                about.style.display = "block";
+            }
+            function showDocs(){
+                hideAll();
+                docs.style.display = "block";
+            }
+            function showEditor(){
+                hideAll();
+                editor.style.display = "block";
+            }
+        </script><!-- Hide & show pages -->
+    </body>
+</html>
